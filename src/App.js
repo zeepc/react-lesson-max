@@ -13,18 +13,6 @@ class App extends Component {
   }
 
 
-  switchNameHandler = (newName) => {
-    console.log('Clicked Clicked Clicked');
-    this.setState({      
-      persons:[
-          {name: newName, age: 28},
-          {name: 'Manu', age: 29},
-          {name: 'Stephanie', age: 26}
-        ]
-      }
-    );
-  }
-
   nameChangeHandler = (event) =>{
       this.setState({      
       persons:[
@@ -59,19 +47,8 @@ class App extends Component {
         {this.state.persons.map(person =>{
           return <Person name={person.name} age={person.age}/>
         })}
-             <Person 
-                  name={this.state.persons[0].name} 
-                  age={this.state.persons[0].age}/>
-              <Person 
-                  name={this.state.persons[1].name} 
-                  age={this.state.persons[1].age}
-                  click={this.switchNameHandler.bind(this,'Max!!!!!!!')}
-                  nameChanged={this.nameChangeHandler}>These are my hobbies: painting.</Person>
-              <Person 
-                  name={this.state.persons[2].name} 
-                  age={this.state.persons[2].age}/>
-           </div>
-        );
+          </div>
+      );
     }
 
     return (
